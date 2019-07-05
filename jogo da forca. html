@@ -1,0 +1,42 @@
+const http = require('http');
+
+const host = '127.0.0.1';
+const porta = 4040;
+
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.write('jogo da forca');
+  res.end();
+});
+
+server.listen(porta, host, () => {
+  console.log(`Servidor rodando em http://${host}:${porta}/`);
+});
+
+
+
+
+<div class="wrapper">
+   <h1>Jogo da forca</h1>
+    <p>Clique nas letras abaixo, e caso queira clique na pista para ter uma dica da palavra chave </p>
+</div>
+<div class="wrapper">
+    <div id="buttons">
+    </div>  
+    <p id="categoriaNome"></p>
+    <div id="hover">
+    </div>
+    <p id="minhasvidas"></p>
+    <p id="pista">Pista</p>  
+     <canvas id="boneco"> </canvas>
+    <div class="container">
+      <button id="dica">Dica</button>
+      <button id="reset">Jogar novamente</button>
+    </div>
+</div>
+
+
+
+/* Referencia - https://codepen.io/cathydutton/pen/ldazc*/
